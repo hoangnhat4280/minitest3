@@ -8,6 +8,13 @@ public class Meat extends Material {
         this.weight = weight;
     }
 
+    public double getWeight() {
+        return weight;
+    }
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
     @Override
     public double getAmount() {
         return weight * getCost();

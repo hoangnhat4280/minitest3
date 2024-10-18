@@ -13,17 +13,6 @@ public class MaterialManager {
         materials.add(material);
     }
 
-    public void removeMaterial(Material material) {
-        materials.remove(material);
-    }
-
-    public void updateMaterial(int index, Material material) {
-        if (index >= 0 && index < materials.size()) {
-            materials.set(index, material);
-        }
-    }
-
-    // Calculate total cost without discount
     public double getTotalCost() {
         double total = 0;
         for (Material material : materials) {
@@ -45,7 +34,6 @@ public class MaterialManager {
         return total;
     }
 
-    // Sort materials by price (without discount)
     public void sortMaterialsByPrice() {
         Collections.sort(materials, new Comparator<Material>() {
             @Override
@@ -55,7 +43,6 @@ public class MaterialManager {
         });
     }
 
-    // Calculate the difference between discounted and non-discounted total
     public double getDiscountDifference() {
         return getTotalCost() - getTotalRealCost();
     }

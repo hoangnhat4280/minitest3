@@ -8,6 +8,14 @@ class CrispyFlour extends Material {
         this.quantity = quantity;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+
     @Override
     public double getAmount() {
         return quantity * getCost();
@@ -17,4 +25,5 @@ class CrispyFlour extends Material {
     public LocalDate getExpiryDate() {
         return getManufacturingDate().plusYears(1);
     }
+
 }
