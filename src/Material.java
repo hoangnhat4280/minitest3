@@ -45,7 +45,6 @@ public abstract class Material {
         this.cost = cost;
     }
 
-    // Abstract methods
     public abstract double getAmount();
     public abstract LocalDate getExpiryDate();
 }

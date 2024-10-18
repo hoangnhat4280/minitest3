@@ -21,7 +21,6 @@ public class MaterialManager {
         return total;
     }
 
-    // Calculate total cost with discount
     public double getTotalRealCost() {
         double total = 0;
         for (Material material : materials) {
