@@ -47,4 +47,10 @@ public abstract class Material {
 
     public abstract double getAmount();
     public abstract LocalDate getExpiryDate();
+
+    @Override
+    public String toString() {
+        return String.format("%s (ID: %s, Cost: %d, Expiry Date: %s)",
+                name, id, cost, getExpiryDate());
+    }
 }

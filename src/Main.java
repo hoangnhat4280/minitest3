@@ -1,9 +1,9 @@
 import java.time.LocalDate;
-import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        MaterialManager manager = new MaterialManager();
+        MaterialManager manager = new MaterialManager(10);
 
         manager.addMaterial(new DiscountCrispyFlour("CF01", "Crispy Flour 1", LocalDate.now(), 5000, 10));
         manager.addMaterial(new DiscountCrispyFlour("CF02", "Crispy Flour 2", LocalDate.now(), 6000, 8));
@@ -26,5 +26,19 @@ public class Main {
         for (Material material : manager.getMaterials()) {
             System.out.println(material.getName() + " , Price: " + material.getAmount());
         }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter material ID to edit: ");
+        String editId = scanner.nextLine();
+        manager.editMaterial(editId);
+
+        System.out.print("Enter material ID to remove: ");
+        String removeId = scanner.nextLine();
+        manager.removeMaterial(removeId);
+
+        System.out.println("Materials after editing and removing:");
+        manager.displayMaterials();
+
+        scanner.close();
     }
 }
